@@ -30,7 +30,7 @@ class Authentication {
                 const firebaseCredentials = await firebase.auth().signInWithCredential(credentials);
                 const firebaseToken = await firebaseCredentials.user.getIdToken()
                 if(firebaseToken){
-                   res.redirect(`javadevsapp://home/${firebaseToken}`);
+                   return res.redirect(`javadevsapp://home/${firebaseToken}`);
                 }
                 else{
                     return res.send({
@@ -42,7 +42,7 @@ class Authentication {
             }
             catch(error){
                 return res.send({
-                    error_message: "oops!! something went wrong.",
+                    error_message: "oops! something went wrong.",
                     error
                 });
             }
