@@ -16,15 +16,15 @@
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "firebase": "^6.3.5",
-    "querystring": "^0.2.0"
-  },
-  "devDependencies": {
+    "querystring": "^0.2.0",
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
     "@babel/node": "^7.5.5",
     "@babel/polyfill": "^7.4.4",
     "@babel/preset-env": "^7.5.5",
-    "@babel/register": "^7.5.5",
+    "@babel/register": "^7.5.5"
+  },
+  "devDependencies": {
     "nodemon": "^1.19.1"
   }
 }
