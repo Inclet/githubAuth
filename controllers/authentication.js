@@ -10,6 +10,7 @@ dotenv.config();
 class Authentication {
     static async githubAuthentication(req, res){
         const { code } = req.query;
+        console.log("code", code);
         const url = `https://github.com/login/oauth/access_token?client_id=${process.env.CLIENT_ID}&client_secret=${process.env.CLIENT_SECRET}&code=${code}`
         if( code){
             // request access_token from github
@@ -18,7 +19,7 @@ class Authentication {
             });
             // destructure response sent;
             const queries = querystring.parse(data);
-
+            console.log("queries", queries);
             // check if access_token is sent
             const token = queries.access_token;
             if(token){
