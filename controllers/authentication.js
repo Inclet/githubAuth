@@ -20,16 +20,16 @@ class Authentication {
             });
             // destructure response sent;
             const queries = querystring.parse(data);
-            logger.info(queries);
             // check if access_token is sent
             const token = queries.access_token;
             if(token){
                 try{
                 // send access_token from github to firebase
                 const credentials = await firebase.auth.GithubAuthProvider.credential(token);
-
+                logger.info(credentials);
                 //receive new token from firebase
                 const firebaseCredentials = await firebase.auth().signInWithCredential(credentials);
+                logger.info(firebaseCredentials);
                 const firebaseToken = await firebaseCredentials.user.getIdToken()
                 if(firebaseToken){
                    return res.redirect(`javadevsapp://home/${firebaseToken}`);
