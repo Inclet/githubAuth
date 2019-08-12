@@ -32,7 +32,7 @@ class Authentication {
                 logger.info(firebaseCredentials);
                 const firebaseToken = await firebaseCredentials.user.getIdToken()
                 if(firebaseToken){
-                   return res.redirect(`javadevsapp://home/${firebaseToken}`);
+                   return res.redirect("https://google.com");
                 }
                 else{
                     return res.send({
